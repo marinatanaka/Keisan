@@ -21,8 +21,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button4.setOnClickListener(this) }
 
         override fun onClick(v: View) {
-            val intent = Intent(this, SecondcalcActivity:: class.java)
-            intent.putExtra("VALUE", VALUE1)
+
+            try {
+
             var num1:Double = editText1.text.toString().toDouble()
             var num2:Double = editText2.text.toString().toDouble()
 
@@ -30,22 +31,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             var VALUE :Double = VALUE1
 
 
-            try {
 
-            if(v.id == R.id.button1) {
-                VALUE1= num1 + num2
-            }else if (v.id == R.id.button2){
-                VALUE1 = num1 - num2
-            }else if (v.id == R.id.button3) {
-                VALUE1 = num1 * num2
-            }else{
-                VALUE1 = num1 / num2
-            }
+                if (v.id == R.id.button1) {
+                    VALUE1 = num1 + num2
+                } else if (v.id == R.id.button2) {
+                    VALUE1 = num1 - num2
+                } else if (v.id == R.id.button3) {
+                    VALUE1 = num1 * num2
+                } else {
+                    VALUE1 = num1 / num2
+                }
 
-            startActivity(intent) }
-
-            catch (e:Exception){
+                val intent = Intent(this, SecondcalcActivity::class.java)
+                intent.putExtra("VALUE", VALUE1)
                 startActivity(intent)
+
+            } catch (e:Exception){
+                textText.text ="数字を入力してください"
             }
     }
 
