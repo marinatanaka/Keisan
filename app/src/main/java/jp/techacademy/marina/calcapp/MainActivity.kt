@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.content.Intent
-import android.provider.Settings.NameValueTable.VALUE
 import android.renderscript.Sampler
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.reflect.KParameter
@@ -27,17 +26,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             var num1:Double = editText1.text.toString().toDouble()
             var num2:Double = editText2.text.toString().toDouble()
 
+            var VALUE1: Double =1.0
+            var VALUE :Double = VALUE1
+
+
             try {
 
             if(v.id == R.id.button1) {
-                VALUE= "${num1 + num2}"
+                VALUE1= num1 + num2
             }else if (v.id == R.id.button2){
-                VALUE = "${num1 - num2}"
+                VALUE1 = num1 - num2
             }else if (v.id == R.id.button3) {
-                VALUE = "${num1 * num2}"
+                VALUE1 = num1 * num2
             }else{
-                VALUE = "${num1 / num2}"
+                VALUE1 = num1 / num2
             }
+
             startActivity(intent) }
 
             catch (e:Exception){
