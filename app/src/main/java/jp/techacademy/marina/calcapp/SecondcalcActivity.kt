@@ -11,9 +11,9 @@ class SecondcalcActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondcalc)
 
-        var value = intent.getDoubleExtra("VALUE", 3.4)
+        val value = intent.getDoubleExtra("VALUE", 3.4)
 
-        resultOfCalc.text = "value"
+        resultOfCalc.text = value.toString()
 
 
 

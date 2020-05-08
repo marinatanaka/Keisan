@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         override fun onClick(v: View) {
             val intent = Intent(this, SecondcalcActivity:: class.java)
-            intent.putExtra("VALUE",0)
+            intent.putExtra("VALUE", VALUE1)
             var num1:Double = editText1.text.toString().toDouble()
             var num2:Double = editText2.text.toString().toDouble()
 
